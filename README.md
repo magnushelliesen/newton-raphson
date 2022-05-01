@@ -19,4 +19,4 @@ solution is a dictionary with keys 'x' which is an array with the last iteration
 
 The method is the simple Newton-Raphson algoithm:
 
-![Figure](https://latex.codecogs.com/png.image?\dpi{110}&space;\bg_white&space;\mathbold{x}_{i+1}=x_i-J(x_i,z)f(x_i,z))
+![Figure](https://latex.codecogs.com/png.image?\dpi{110}&space;\bg_white&space;\bm{x}_{i+1}=x_i-J(x_i,z)f(x_i,z))
