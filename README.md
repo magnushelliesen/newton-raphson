@@ -18,10 +18,5 @@ Where
 solution is a dictionary with keys 'x' which is an array with the last iteration, 'fun' which is an array with the function value from the last iteration, and 'success' which is a boolean indicating whether the solution converged.
 
 The method is the simple Newton-Raphson algoithm:
-```math
-\[
-  \x_{i+1} = x_i - J^{-1}(x_i, z)f(x_i,z)
-\]
-```
 
-![Figure](https://latex.codecogs.com/png.image?\dpi{110}&space;\bg_white&space;F=P(1+\frac{i}{n})^{nt})
+![Figure](https://latex.codecogs.com/png.image?\dpi{110}&space;\bg_white&space;    \x_{i+1} = x_i - J^{-1}(x_i, z)f(x_i,z) )
