@@ -23,3 +23,5 @@ The method is the simple Newton-Raphson algoithm:
   \x_{i+1} = x_i - J^{-1}(x_i, z)f(x_i,z)
 \]
 ```
+
+![Figure](https://latex.codecogs.com/png.image?\dpi{110}&space;\bg_white&space;F=P(1+\frac{i}{n})^{nt})
