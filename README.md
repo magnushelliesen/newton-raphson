@@ -10,6 +10,6 @@ Routine that calculates roots using simple multivariate Newton-Raphson method. T
 solution is a dictionary with keys 'x' which is an array with the last iteration, 'fun' which is an array with the function value from the last iteration, and 'success' which is a boolean indicating whether the solution converged.
 
 The method is the simple Newton-Raphson algoithm:
-\[
+```math
   \x_{i+1} = x_i - J^{-1}(x_i, z)f(x_i,z)
-\]
+```
