@@ -11,5 +11,7 @@ solution is a dictionary with keys 'x' which is an array with the last iteration
 
 The method is the simple Newton-Raphson algoithm:
 ```math
+\[
   \x_{i+1} = x_i - J^{-1}(x_i, z)f(x_i,z)
+\]
 ```
