@@ -12,8 +12,10 @@ Where
 - jac is a function that returns the Jacobian matrix of the objective function
 - tol (optional) is the tolerance level
 - maxiter (optional) is the maximum number of iterations
-- solution is a dictionary containing the solution
-  - 'x' is the 
+- solution is a dictionary containing
+  - 'x' the value from the last iteration
+  - 'fun' the objective function value from the last iteration
+  - 'success' a boolean indication whether the solution converged or not
 
 solution is a dictionary with keys 'x' which is an array with the last iteration, 'fun' which is an array with the function value from the last iteration, and 'success' which is a boolean indicating whether the solution converged.
 
