@@ -6,7 +6,6 @@ solution = newton_raphson(function, [initial values], args=tuple (optional), jac
 solution is a dictionary with keys 'x' which is an array with the last iteration, 'fun' which is an array with the function value from the last iteration, and 'success' which is a boolean indicating whether the solution converged.
 
 The method is the simple Newton-Raphson algoithm:
-
-$\x_{i+1} = x_i - J^{-1}(x_i, z)f(x_i,z)$
-
-![formula](https://render.githubusercontent.com/render/math?math=e^{i \pi} = -1)
+\[
+  \x_{i+1} = x_i - J^{-1}(x_i, z)f(x_i,z)
+\]
