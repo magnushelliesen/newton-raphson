@@ -23,4 +23,8 @@ The method is the simple Newton-Raphson algoithm, where the i+1'st iteration is 
 
 ![Figure](https://latex.codecogs.com/png.image?\dpi{110}&space;\bg_white&space;x_{i+1}=x_i-J(x_i,z)f(x_i,z),)
 
-where x and f are vectors and J is a matrix.
+where x and f are vectors and J is a matrix. The method runs until
+
+![Figure](https://latex.codecogs.com/png.image?\dpi{110}&space;\bg_white&space; |Max(f(x_i,z))|\leq tol,)
+
+or maxiter is reached.
