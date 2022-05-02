@@ -6,7 +6,7 @@ def newton_raphson(f, init, **kwargs):
 	if 'args' in kwargs:
 		args = kwargs['args']
 	else:
-		args = tuple()
+		args = ()
 	if 'jac' in kwargs:
 		jac = kwargs['jac']
 	else:
@@ -25,6 +25,7 @@ def newton_raphson(f, init, **kwargs):
 	x_i = init
 	f_i = np.array(f(init.tolist(), *args))
 	i = 0
+	
 	while np.max(np.abs(f_i)) > tol:
 		if i == maxiter:
 			success = False
@@ -32,4 +33,5 @@ def newton_raphson(f, init, **kwargs):
 		x_i = x_i-np.matmul(np.linalg.inv(np.array(jac(x_i.tolist(), *args))), f_i)
 		f_i = np.array(f(x_i, *args))
 		i+=1
+	
 	return {'x': x_i, 'fun': f_i, 'success': success}
