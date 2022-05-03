@@ -15,7 +15,7 @@ def newton_raphson(f, init, **kwargs):
 	if 'tol' in kwargs:
 		tol = kwargs['tol']
 	else:
-		tol = 10**-10
+		tol = 1e-10
 	if 'maxiter' in kwargs:
 		maxiter = kwargs['maxiter']
 	else:
@@ -25,7 +25,6 @@ def newton_raphson(f, init, **kwargs):
 	x_i = init
 	f_i = np.array(f(init.tolist(), *args))
 	i = 0
-	
 	while np.max(np.abs(f_i)) > tol:
 		if i == maxiter:
 			success = False
