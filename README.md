@@ -23,4 +23,4 @@ The method is the simple Newton-Raphson algoithm, where the i+1'st iteration is 
 
 ![Figure](https://latex.codecogs.com/png.image?\dpi{110}&space;\bg_white&space;x_{i+1}=x_i-J(x_i,z)f(x_i,z),)
 
-where x and f is a vector and vector funciton (the objective function) and J is the Jacobian matrix. The method runs until the maximum of the absolute values of the objective function is less than or equal to tol, or *maxiter* is reached.
+where x and f is a vector and vector funciton (the objective function) and J is the Jacobian matrix. The method runs until the maximum of the absolute values of the objective function is less than or equal to tol, or **maxiter** is reached.
