@@ -1,3 +1,5 @@
+import numpy as np
+
 def newton_raphson(f, init, **kwargs):
 	"""
 	TBA
@@ -29,7 +31,11 @@ def newton_raphson(f, init, **kwargs):
 		if i == maxiter:
 			success = False
 			break
-		x_i = x_i-np.matmul(np.linalg.inv(np.array(jac(x_i.tolist(), *args))), f_i)
+		try:
+			x_i = x_i-np.matmul(np.linalg.inv(np.array(jac(x_i.tolist(), *args))), f_i)
+		except np.linalg.LinAlgError:
+			success = False
+			break
 		f_i = np.array(f(x_i, *args))
 		i+=1
 	
