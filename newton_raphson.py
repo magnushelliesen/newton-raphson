@@ -1,10 +1,11 @@
 import numpy as np
 
+
 def newton_raphson(f, init, **kwargs):
-	"""
-	TBA......
-	"""
-	
+"""
+TBA
+"""
+
 	if 'args' in kwargs:
 		args = kwargs['args']
 	else:
@@ -22,7 +23,7 @@ def newton_raphson(f, init, **kwargs):
 		maxiter = kwargs['maxiter']
 	else:
 		maxiter = 10
-	
+
 	success = True
 	x_i = init
 	f_i = np.array(f(init.tolist(), *args))
@@ -38,5 +39,5 @@ def newton_raphson(f, init, **kwargs):
 			break
 		f_i = np.array(f(x_i, *args))
 		i+=1
-	
+
 	return {'x': x_i, 'fun': f_i, 'success': success}
