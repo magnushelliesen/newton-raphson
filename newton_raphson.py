@@ -1,43 +1,48 @@
 import numpy as np
 
 
-def newton_raphson(f, init, **kwargs):
+def newton_raphson(f, jac, init, **kwargs):
 	"""
-	TBA
+	Function that takes a function f and a jacobi matrix jac and finds a root
 	"""
 
-	if 'args' in kwargs:
-		args = kwargs['args']
+	# Check for any kwargs
+	if 'args' in kwargs.keys():
+		args = kwargs.get('args')
 	else:
 		args = ()
-	if 'jac' in kwargs:
-		jac = kwargs['jac']
-	else:
-		print('ERROR: Newton-Raphson requires symbolic Jacobian matrix')
-		return {'x': np.array(init), 'fun': np.array(f(init, *args)), 'success': False}
-	if 'tol' in kwargs:
-		tol = kwargs['tol']
+	if 'tol' in kwargs.keys():
+		tol = kwargs.get('tol')
 	else:
 		tol = 1e-10
-	if 'maxiter' in kwargs:
-		maxiter = kwargs['maxiter']
+	if 'maxiter' in kwargs.keys():
+		maxiter = kwargs.get('maxiter')
 	else:
 		maxiter = 10
 
-	success = True
+	# Initialize loop
 	x_i = init
-	f_i = np.array(f(init.tolist(), *args))
-	i = 0
-	while np.max(np.abs(f_i)) > tol:
-		if i == maxiter:
+	i = 1
+	while True:
+		# If maxiter reached, then break with failure
+		if i > maxiter:
 			success = False
 			break
+
+		# Calculate functional value at x_i
+		f_i = np.array(f(x_i.tolist(), *args))
+
+		# If function closer to zero than tolerance, then break with success
+		if np.max(np.abs(f_i)) <= tol:
+			success = True
+			break
+
+		# Try to calculate the next iteration, if exception is thrown break with failure
 		try:
 			x_i = x_i-np.matmul(np.linalg.inv(np.array(jac(x_i.tolist(), *args))), f_i)
+			i += 1
 		except np.linalg.LinAlgError:
 			success = False
 			break
-		f_i = np.array(f(x_i, *args))
-		i+=1
-
-	return {'x': x_i, 'fun': f_i, 'success': success}
+	
+	return {'x': x_i, 'f': f_i, 'success': success, 'iter': i}
