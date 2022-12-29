@@ -17,7 +17,7 @@ Routine that calculates roots using simple multivariate Newton-Raphson method. T
 
 Which returns {'x': array([1.]), 'f': array([0.]), 'success': True, 'iter': 10}
 
-Where
+The function takes the following arguments:
 - **func** is the objective function
 - **jac** is a function that returns the Jacobian matrix of the objective function
 - **x0** is an array with initial values
