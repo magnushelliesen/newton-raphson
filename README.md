@@ -15,6 +15,8 @@ Routine that calculates roots using simple multivariate Newton-Raphson method. T
   print(solution)
 ```
 
+{'x': array([1.]), 'f': array([0.]), 'success': True, 'iter': 10}
+
 Where
 - **func** is the objective function
 - **x0** is an array with initial values
