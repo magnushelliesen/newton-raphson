@@ -2,20 +2,18 @@
 Routine that calculates roots using simple multivariate Newton-Raphson method. The input and output is similar to scipy.optimize root. Example of use is
 
 ```python
-  import numpy as np
-  import newton_raphson as nr
+from newton_raphson.newton_raphson import newton_raphson
 
-  def f(x):
-       return [x[0]**3-1]
+def f(x):
+    return [x[0]**3-1, x[1]*2]
 
-  def jac(x):
-      return [[3*x[0]**2]]
+def jac(x):
+    return [[3*x[0]**2, 0], [0, 2*x[1]]]
 
-  solution = nr.newton_raphson(f, jac, np.array([-1]), tol=10**-10, maxiter=10)
-  print(solution)
+newton_raphson(f, [1,2], jac=jac)
 ```
 
-Which returns {'x': array([1.]), 'f': array([0.]), 'success': True, 'iter': 10}
+Which returns {'x': [1.0, 0.0], 'fun': [0.0, 0.0], 'success': True, 'status': 0}
 
 The function takes the following arguments:
 - **func** is the objective function
