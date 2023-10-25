@@ -1,5 +1,5 @@
 # newton-raphson
-Routine that calculates roots using simple multivariate Newton-Raphson method. The input and output is similar to scipy.optimize root. Example of use is
+Routine that calculates roots using simple [multivariate Newton-Raphson method](https://github.com/magnushelliesen/newton-raphson/blob/main/newton_raphson/newton_raphson.py). The input and output is similar to scipy.optimize root. Example of use is
 
 ```python
 from newton_raphson.newton_raphson import newton_raphson
