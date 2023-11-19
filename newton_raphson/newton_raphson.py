@@ -1,3 +1,7 @@
+"""
+By: Magnus Kvåle Helliesen
+"""
+
 import numpy as np
 
 
